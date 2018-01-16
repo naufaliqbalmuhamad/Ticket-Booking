@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PemesananTiket" Class="OperationDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-JF8547P\SQLEXPRESS;Initial Catalog=PemesananTiket;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PemesananTiketConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Maskapai" Member="Maskapais">
+    <Type Name="Maskapai">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NamaMaskapai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Maskapai_Pemesanan" Member="Pemesanans" ThisKey="Id" OtherKey="MaskapaiId" Type="Pemesanan" />
+      <Association Name="Maskapai_Pesawat" Member="Pesawats" ThisKey="Id" OtherKey="MaskapaiId" Type="Pesawat" />
+      <Association Name="Maskapai_Rute" Member="Rutes" ThisKey="Id" OtherKey="MaskapaiId" Type="Rute" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipe" Member="Tipes">
+    <Type Name="Tipe">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TipePesawat" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipe_Pesawat" Member="Pesawats" ThisKey="Id" OtherKey="TipeId" Type="Pesawat" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pemesanan" Member="Pemesanans">
+    <Type Name="Pemesanan">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NamaPemesan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TanggalPemesanan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaskapaiId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RuteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Maskapai_Pemesanan" Member="Maskapai" ThisKey="MaskapaiId" OtherKey="Id" Type="Maskapai" IsForeignKey="true" />
+      <Association Name="Rute_Pemesanan" Member="Rute" ThisKey="RuteId" OtherKey="Id" Type="Rute" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pesawat" Member="Pesawats">
+    <Type Name="Pesawat">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaskapaiId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Jadwal" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PilotId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Maskapai_Pesawat" Member="Maskapai" ThisKey="MaskapaiId" OtherKey="Id" Type="Maskapai" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Tipe_Pesawat" Member="Tipe" ThisKey="TipeId" OtherKey="Id" Type="Tipe" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Pilot_Pesawat" Member="Pilot" ThisKey="PilotId" OtherKey="Id" Type="Pilot" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pilot" Member="Pilots">
+    <Type Name="Pilot">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NamaPilot" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Pilot_Pesawat" Member="Pesawats" ThisKey="Id" OtherKey="PilotId" Type="Pesawat" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rute" Member="Rutes">
+    <Type Name="Rute">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaskapaiId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Keberangkatan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Kedatangan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NomorPenerbangan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Rute_Pemesanan" Member="Pemesanans" ThisKey="Id" OtherKey="RuteId" Type="Pemesanan" />
+      <Association Name="Maskapai_Rute" Member="Maskapai" ThisKey="MaskapaiId" OtherKey="Id" Type="Maskapai" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

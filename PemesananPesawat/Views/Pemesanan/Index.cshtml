@@ -1,0 +1,67 @@
+﻿@model IEnumerable<PemesananPesawat.Models.PemesananModel>
+
+@{
+    ViewBag.Title = "Pemesanan Tiket";
+}
+
+<h2 style="text-align: center; margin-top: 100px">Pemesanan Tiket</h2>
+
+<p>
+    @Html.ActionLink("Tambah Pemesanan", "Create")
+</p>
+<table class="table table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaPemesan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TanggalPemesanan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RuteId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaskapaiId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Keberangkatan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kedatangan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomorPenerbangan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaPemesan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TanggalPemesanan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RuteId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaskapaiId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Keberangkatan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kedatangan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomorPenerbangan)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

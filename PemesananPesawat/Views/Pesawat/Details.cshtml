@@ -1,0 +1,50 @@
+﻿@model PemesananPesawat.Models.PesawatModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PesawatModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaMaskapai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamaMaskapai)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Jadwal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jadwal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipePesawat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipePesawat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaPilot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamaPilot)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

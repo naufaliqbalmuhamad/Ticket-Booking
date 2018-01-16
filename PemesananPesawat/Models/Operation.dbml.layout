@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Operation">
+  <DataContextMoniker Name="/OperationDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2d0a32ec-e928-4e7c-8ef8-4dcab1a0811a" absoluteBounds="0.75, 4, 2, 1.1939925130208331">
+      <DataClassMoniker Name="/OperationDataContext/Maskapai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19b6c936-46f3-490b-b6d0-80ab510184cb" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3ce8c4c7-8fb4-429e-bebe-0ce17853d7da" absoluteBounds="0.75, 2, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/OperationDataContext/Tipe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bfad8b57-b5af-4533-b6cb-aac92bd0d303" absoluteBounds="0.765, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c14f321f-ef49-4a55-9ce6-bd2f4822ed84" absoluteBounds="6.25, 6.375, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/OperationDataContext/Pemesanan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="134097ca-3493-4286-86e3-508eb304c3fe" absoluteBounds="6.265, 6.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="50c3ebe0-cb29-4f5d-9d85-13e9b211c956" absoluteBounds="3.5, 3.625, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/OperationDataContext/Pesawat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="838e8f0c-2891-40a4-8869-51050fa9a6e7" absoluteBounds="3.515, 4.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="71085e27-9a6c-4557-87cb-44891bd9de78" absoluteBounds="0.75, 6, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/OperationDataContext/Pilot" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9de71da6-9dfc-4e7d-83d4-b316b4d84776" absoluteBounds="0.765, 6.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="960f6182-5fd3-4d6c-8f1e-0d5effdf560d" absoluteBounds="6.5, 3, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/OperationDataContext/Rute" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2c0cb58-5c18-4057-86b3-290a4006b10d" absoluteBounds="6.5150000000000006, 3.4600000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 5.14255798938301); (3.28125 : 5.67380798938301); (3.28125 : 7.26044840494792); (6.25 : 7.26044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OperationDataContext/Maskapai/Maskapai_Pemesanan" />
+      <nodes>
+        <classShapeMoniker Id="2d0a32ec-e928-4e7c-8ef8-4dcab1a0811a" />
+        <classShapeMoniker Id="c14f321f-ef49-4a55-9ce6-bd2f4822ed84" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.56574375651042); (3.5 : 4.56574375651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OperationDataContext/Maskapai/Maskapai_Pesawat" />
+      <nodes>
+        <classShapeMoniker Id="2d0a32ec-e928-4e7c-8ef8-4dcab1a0811a" />
+        <classShapeMoniker Id="50c3ebe0-cb29-4f5d-9d85-13e9b211c956" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.59699625651042); (4.5 : 2.59699625651042); (4.5 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OperationDataContext/Tipe/Tipe_Pesawat" />
+      <nodes>
+        <classShapeMoniker Id="3ce8c4c7-8fb4-429e-bebe-0ce17853d7da" />
+        <classShapeMoniker Id="50c3ebe0-cb29-4f5d-9d85-13e9b211c956" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.59699625651042); (4.5 : 6.59699625651042); (4.5 : 5.39589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OperationDataContext/Pilot/Pilot_Pesawat" />
+      <nodes>
+        <classShapeMoniker Id="71085e27-9a6c-4557-87cb-44891bd9de78" />
+        <classShapeMoniker Id="50c3ebe0-cb29-4f5d-9d85-13e9b211c956" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.375 : 4.77089680989583); (7.375 : 6.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/OperationDataContext/Rute/Rute_Pemesanan" />
+      <nodes>
+        <classShapeMoniker Id="960f6182-5fd3-4d6c-8f1e-0d5effdf560d" />
+        <classShapeMoniker Id="c14f321f-ef49-4a55-9ce6-bd2f4822ed84" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.00091745577925); (3.125 : 3.62591745577925); (3.125 : 2.875); (4.41666666666667 : 2.875 : JumpStart); (4.58333333333333 : 2.875 : JumpEnd); (6.375 : 2.875); (6.5 : 3)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OperationDataContext/Maskapai/Maskapai_Rute" />
+      <nodes>
+        <classShapeMoniker Id="2d0a32ec-e928-4e7c-8ef8-4dcab1a0811a" />
+        <classShapeMoniker Id="960f6182-5fd3-4d6c-8f1e-0d5effdf560d" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,50 @@
+﻿@model PemesananPesawat.Models.RuteModel
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>RuteModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaMaskapai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamaMaskapai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Keberangkatan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Keberangkatan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kedatangan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kedatangan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomorPenerbangan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomorPenerbangan)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
